@@ -376,20 +376,20 @@ if (type === "universal") {
 
 });
 
-bot.action(/approve_(.+)/, (ctx) => {
+// bot.action(/approve_(.+)/, (ctx) => {
 
-  const id = ctx.match[1];
+//   const id = ctx.match[1];
 
-  db.run(
-    "UPDATE specialists SET status = 'approved' WHERE id = ?",
-    [id]
-  );
+//   db.run(
+//     "UPDATE specialists SET status = 'approved' WHERE id = ?",
+//     [id]
+//   );
 
-  ctx.reply(
-    "✅ Специалист одобрен"
-  );
+//   ctx.reply(
+//     "✅ Специалист одобрен"
+//   );
 
-});
+// });
 
 bot.action(/reject_(.+)/, (ctx) => {
 
