@@ -1224,13 +1224,14 @@ ${s.description}`,
 });
 
 bot.action("home", async (ctx) => {
-
+  ctx.answerCbQuery();
   delete registrationState[ctx.from.id];
   delete editState[ctx.from.id];
   delete aiMatchState[ctx.from.id];
   delete userReviewState[ctx.from.id];
 
-  await ctx.replyWithPhoto(
+  await ctx.editMessageMedia(
+    
     {
       source: path.join(__dirname, "assets", "menu.png")
     },
