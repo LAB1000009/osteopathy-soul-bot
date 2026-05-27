@@ -1721,6 +1721,10 @@ bot.on("successful_payment", (ctx) => {
 
 });
 
+bot.catch((err, ctx) => {
+  console.log("BOT ERROR:", err.message);
+});
+
 bot.launch();
 
 console.log("🚀 Русская версия запущена");
