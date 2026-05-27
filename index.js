@@ -407,33 +407,33 @@ bot.action(/reject_(.+)/, (ctx) => {
 });
 
 bot.action("relationships", (ctx) => {
-  ctx.answerCbQuery();
+  ctx.answerCbQuery().catch(() => {});
   showExperts(ctx, "relationships");
 });
 
 bot.action("finance", (ctx) => {
-  ctx.answerCbQuery();
+  ctx.answerCbQuery().catch(() => {});
   showExperts(ctx, "finance");
 });
 
 bot.action("health", (ctx) => {
-  ctx.answerCbQuery();
+  ctx.answerCbQuery().catch(() => {});
   showExperts(ctx, "health");
 });
 
 bot.action("family", (ctx) => {
-  ctx.answerCbQuery();
+  ctx.answerCbQuery().catch(() => {});
   showExperts(ctx, "family");
 });
 
 bot.action("universal", (ctx) => {
-  ctx.answerCbQuery();
+  ctx.answerCbQuery().catch(() => {});
   showExperts(ctx, "universal");
 });
 
 bot.action("vip", (ctx) => {
 
-  ctx.answerCbQuery();
+  ctx.answerCbQuery().catch(() => {});
 
   db.all(
     `
@@ -534,7 +534,7 @@ ${s.description}`,
 
 // bot.action("ai", (ctx) => {
 
-//   ctx.answerCbQuery();
+//   ctx.answerCbQuery().catch(() => {});
 
 //   ctx.reply(
 // `🤖 AI Расклад
@@ -564,7 +564,7 @@ ${s.description}`,
 
 bot.action("safe", (ctx) => {
 
-  ctx.answerCbQuery();
+  ctx.answerCbQuery().catch(() => {});
 
   ctx.reply(
 `🛡 Гарантия безопасности
@@ -1224,7 +1224,7 @@ ${s.description}`,
 });
 
 bot.action("home", async (ctx) => {
-  ctx.answerCbQuery();
+  ctx.answerCbQuery().catch(() => {});
   delete registrationState[ctx.from.id];
   delete editState[ctx.from.id];
   delete aiMatchState[ctx.from.id];
