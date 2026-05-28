@@ -5,6 +5,8 @@ const OpenAI = require("openai");
 const db = require("./database");
 const path = require("path");
 const bot = new Telegraf(process.env.BOT_TOKEN);
+const ADMIN_ID = 421535384;
+
 
 let openai = null;
 
@@ -746,6 +748,10 @@ bot.action(/pay_vip_(.+)/, async (ctx) => {
 });
 
 bot.command("pending", (ctx) => {
+
+if (ctx.from.id !== ADMIN_ID) {
+  return ctx.reply("⛔ Нет доступа");
+}
 
   db.all(
     "SELECT * FROM specialists WHERE status = 'pending'",
